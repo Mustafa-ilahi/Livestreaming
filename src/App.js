@@ -222,6 +222,29 @@ function VideoComponent(props) {
                 </div>
               </div>
             </div>
+            <div className={styles.subscribeRow}>
+              <div className={styles.subscribeRowLeft}>
+                <img src={images.user1} />
+                <div>
+                  <div className={styles.streamerName}>Szekeres Dalma</div>
+                  <div className={styles.streamerId}>Id : 123546545</div>
+                </div>
+              </div>
+              <div className={styles.subscribeRowRight}>
+                <div className={styles.userrIconBtn}>
+                  <img className={styles.userrIcon} src={images.userrIcon} />
+                  35K
+                </div>
+                {/* <div className={styles.followBtn}>+ Follow</div>
+                <div className={styles.subscribeBtn}>
+                  <img
+                    className={styles.subscribeIcon}
+                    src={images.subscribeIcon}
+                  />
+                  Subscribe
+                </div> */}
+              </div>
+            </div>
           </div>
         </>
       )}
@@ -395,6 +418,30 @@ function HLSPlayer({ url, handleOnLeave }) {
               <div className={styles.heartIconContainer}>
                 <img className={styles.heartIcon} src={images.heartIcon} />
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.subscribeRow}>
+          <div className={styles.subscribeRowLeft}>
+            <img src={images.user1} />
+            <div>
+              <div className={styles.streamerName}>Szekeres Dalma</div>
+              <div className={styles.streamerId}>Id : 123546545</div>
+            </div>
+          </div>
+          <div className={styles.subscribeRowRight}>
+            <div className={styles.userrIconBtn}>
+              <img className={styles.userrIcon} src={images.userrIcon} />
+              35K
+            </div>
+            <div className={styles.followBtn}>+ Follow</div>
+            <div className={styles.subscribeBtn}>
+              <img
+                className={styles.subscribeIcon}
+                src={images.subscribeIcon}
+              />
+              Subscribe
             </div>
           </div>
         </div>

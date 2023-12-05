@@ -331,6 +331,116 @@ body {
   height: 16px;
 }
 
+.subscribeRow {
+  display: flex;
+  flex-direction: row;
+  width: 67%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2%;
+  margin-bottom: 5%;
+}
+
+.subscribeRowLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.streamerName {
+  font-weight: 600;
+  margin-left: 12px;
+  color: black;
+}
+
+.streamerId {
+  font-size: small;
+  margin-left: 12px;
+  color: rgb(134, 134, 134);
+  align-self: flex-start;
+  display: flex;
+}
+
+.subscribeRowRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+
+.userrIconBtn {
+  color: black;
+  font-size: smaller;
+  font-weight: 700;
+  padding-bottom: 2px;
+}
+
+.userrIcon {
+  height: 14px;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.followBtn {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(190, 66, 222, 1) 0%,
+    rgba(74, 3, 141, 1) 100%
+  );
+  height: 30px;
+  border-radius: 100px;
+  width: 26%;
+  min-width: fit-content;
+  color: white;
+  font-weight: 500;
+  font-size: smaller;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  font-size: small;
+  color: white;
+  font-weight: 600;
+  margin-left: 5%;
+}
+
+.subscribeBtn {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgb(161, 56, 187) 0%,
+    rgba(74, 3, 141, 1) 100%
+  );
+  height: 30px;
+  border-radius: 100px;
+  width: 38%;
+  min-width: fit-content;
+  color: white;
+  font-weight: 500;
+  font-size: smaller;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  font-size: small;
+  color: white;
+  font-weight: 600;
+  margin-left: 5%;
+}
+
+.subscribeIcon {
+  height: 14px;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+
 .joinAsAViewerBtn {
   border: none;
   background: linear-gradient(
