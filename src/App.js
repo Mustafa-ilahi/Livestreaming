@@ -10,8 +10,9 @@ import images from "./utilities/index";
 import styles from "./style.module.css";
 import Header from "./Componenets/Header";
 
-function JoinScreen({ getMeetingAndToken }) {
+function JoinScreen({ getMeetingAndToken, hideButton }) {
   const [meetingId, setMeetingId] = useState(null);
+
   const onClick = async () => {
     await getMeetingAndToken(meetingId);
   };
@@ -36,6 +37,7 @@ function JoinScreen({ getMeetingAndToken }) {
           className={styles.createMeetingBtn}
           onClick={() => {
             onClick();
+            hideButton();
           }}
         >
           Create Meeting
@@ -312,9 +314,8 @@ function Container(props) {
   );
 }
 
-function MeetingContainer() {
+function MeetingContainer({ hideButton }) {
   const [meetingId, setMeetingId] = useState(null);
-
   const getMeetingAndToken = async (id) => {
     const meetingId =
       id == null ? await createMeeting({ token: authToken }) : id;
@@ -334,7 +335,10 @@ function MeetingContainer() {
       <Container meetingId={meetingId} />
     </MeetingProvider>
   ) : (
-    <JoinScreen getMeetingAndToken={getMeetingAndToken} />
+    <JoinScreen
+      getMeetingAndToken={getMeetingAndToken}
+      hideButton={hideButton}
+    />
   );
 }
 
@@ -452,9 +456,7 @@ function HLSPlayer({ url, handleOnLeave }) {
 
 function HLSContainer() {
   const [downstreamUrl, setDownstreamUrl] = useState("");
-
   const isJoined = useMemo(() => !!downstreamUrl, [downstreamUrl]);
-
   return isJoined ? (
     <HLSPlayer
       url={downstreamUrl}
@@ -482,7 +484,7 @@ function App() {
   }, []);
 
   const handleButton = () => {
-    setButtonClicked(true);
+    setButtonClicked(!buttonClicked);
   };
   return (
     <>
@@ -499,7 +501,11 @@ function App() {
           {isHost ? "Join as a Viewer" : "Join as a Host"}
         </button>
       )}
-      {isHost ? <MeetingContainer /> : <HLSContainer />}
+      {isHost ? (
+        <MeetingContainer hideButton={handleButton} />
+      ) : (
+        <HLSContainer />
+      )}
       {/* {isHost ? <MeetingContainer /> : <HLSContainer />} */}
     </>
   );
